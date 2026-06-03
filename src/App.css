@@ -1,1 +1,47 @@
-/*Schrijf hier jouw eigen CSS!*/
+/*////////////////////////////////////////////////////////////////////////
+Table of Contents:
+    1. Global Styles
+    2. Typografie
+    3. Areas
+    4. Media Queries
+////////////////////////////////////////////////////////////////////////*/
+
+/*////////////////////////
+    1. Global Styles
+////////////////////////*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ol, ul {
+    list-style: none
+}
+/*////////////////////////
+    2. Typografie
+////////////////////////*/
+
+/*////////////////////////
+    3. Areas
+////////////////////////*/
+article {
+    padding:32px 9 px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+li {
+    background-color: darkgrey;
+    padding: 3px 32px;
+    border: 3px solid white
+}
+/*////////////////////////
+    4. Media Queries
+////////////////////////*/
