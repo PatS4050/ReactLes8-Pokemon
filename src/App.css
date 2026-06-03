@@ -25,7 +25,7 @@ ol, ul {
     3. Areas
 ////////////////////////*/
 main {
-    border:2px solid red;
+    /*border:2px solid red;*/
     background-color: royalblue;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@ main {
     width: 912px;
 }
 div{
-    border:2px solid magenta;
+    /*border:2px solid magenta;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
