@@ -6,7 +6,7 @@ import title from './assets/pokemonTitle.png';
 
 function App() {
     const linkPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20';
-    const [pokemon, setPokemon] = useState("");
+    const [pokemon, setPokemon] = useState([]);
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
 
@@ -16,8 +16,14 @@ function App() {
         toggleError(false);
         try {
             const response = await axios.get(linkPokemon, {});
-            setPokemon(response.data)
-            console.log(response.data)
+            const pokemonDetails = await Promise.all(
+                response.data.results.map(async (pokemon) => {
+                    const detailResponse = await axios.get(pokemon.url);
+                    return detailResponse.data;
+                })
+            );
+            setPokemon(pokemonDetails);
+            console.log(pokemonDetails);
         } catch (e) {
             toggleError(true)
             console.error(e);
@@ -36,7 +42,7 @@ function App() {
                 <img src={title} alt='pokemon as title' />
                 <span><><button type='submit'>vorige</button><button type='submit'>volgende</button></></span>
                 <div>
-                    {pokemon.map((alien) => {
+                    {pokemon?.map((alien) => {
                         return (
                         <article className="pokemon" key={alien.abilities.id}>
                             <h2>{alien.name}</h2>
