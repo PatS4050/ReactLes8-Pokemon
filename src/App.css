@@ -29,10 +29,11 @@ main {
     background-color: royalblue;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
     overflow-y: auto;
-    flex-basis: 900px;
+    flex-basis: 960px;
+}
 div{
     /*border:2px solid magenta;*/
     display: flex;
@@ -46,18 +47,18 @@ div{
 }
 button{
     background-color: darkgrey;
-    margin:12px;
+    margin:6px;
     width:118px;
 }
 article {
     background-color: white;
-    padding:32px 9 px;
-    margin:12px;
+    padding:9px 9px;
+    margin:4px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    flex-basis: 180px;
+    flex-basis: 160px;
 }
 ul {
     display: flex;
@@ -70,7 +71,6 @@ li {
     padding: 3px 32px;
     border: 4px solid white;
     width: 100%;
-
 }
 /*////////////////////////
     4. Media Queries

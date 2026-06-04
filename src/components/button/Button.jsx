@@ -1,15 +1,15 @@
 import './Button.css'
 
-function Button (){
-
+function Button ({handleClick, type, disabled, name, label}){
     return (
         <button
-            onClick={}
-            type={}
-            disabled={}
-            name={}
+            onClick={handleClick}
+            type={type}
+            disabled={disabled}
+            name={name}
             >
+            {label}
         </button>
-    )
+    );
 }
 export default Button
