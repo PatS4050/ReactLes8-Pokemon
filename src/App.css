@@ -32,7 +32,7 @@ main {
     justify-content: center;
     align-items: center;
     overflow-y: auto;
-    flex-basis: 960px;
+    flex-basis: 100vw;
 }
 div{
     /*border:2px solid magenta;*/
@@ -40,7 +40,7 @@ div{
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    gap: 24px;
+    gap: 12px;
     width: 100%;
     flex-grow: 1;
     flex-wrap: wrap;
@@ -58,7 +58,7 @@ article {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    flex-basis: 160px;
+    flex-basis: 180px;
 }
 ul {
     display: flex;

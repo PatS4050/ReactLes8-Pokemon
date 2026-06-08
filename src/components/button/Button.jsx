@@ -1,6 +1,14 @@
 import './Button.css'
+import axios from "axios";
 
-function Button ({handleClick, type, disabled, name, label}){
+function Button ({ type, disabled, name, label, endpoint, dataReceived}){
+    const handleClick = async ()=>{
+        const response =     await axios.get(endpoint)
+        console.log(response)
+        dataReceived(response)
+        // return setPokemon(response)
+        // setPokemon (response)
+    }
     return (
         <button
             onClick={handleClick}

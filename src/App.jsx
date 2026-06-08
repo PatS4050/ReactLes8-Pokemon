@@ -5,19 +5,21 @@ import title from './assets/pokemonTitle.png';
 import Button from "./components/button/Button.jsx";
 
 function App() {
-    const linkPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=5&offset=5';
-    const linkPreviousPokemon = 'https://pokeapi.co/api/v2/pokemon.previous';
-    const linkNextPokemon = 'https://pokeapi.co/api/v2/pokemon.next';
+    // const linkPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20';
+    const linkPreviousPokemon = 'https://pokeapi.co/api/v2/pokemon/?previous';
+    const linkNextPokemon = 'https://pokeapi.co/api/v2/pokemon/?next';
+    // const linkNextPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20'
     const [pokemon, setPokemon] = useState([]);
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
+    const [linkTotal, setLinkTotal] = useState ("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20")
 
 
     async function fetchPokemon() {
         toggleLoading(true);
         toggleError(false);
         try {
-            const response = await axios.get(linkPokemon, {});
+            const response = await axios.get(linkTotal, {});
             const pokemonDetails = await Promise.all(
                 response.data.results.map(async (pokemon) => {
                     const detailResponse = await axios.get(pokemon.url);
@@ -43,8 +45,8 @@ function App() {
             <main>
                 <img src={title} alt='pokemon as title' />
                 <span>
-                    <Button type='button' name='vorige' label="previous"></Button>
-                    <Button type='button' name='volgende' label='next'></Button>
+                    <Button type='button' name='vorige' label="previous" endpoint={linkPreviousPokemon}></Button>
+                    <Button type='button' name='volgende' label='next' endpoint={linkNextPokemon} dataReceived={setPokemon}></Button>
                 </span>
                 <div>
                     {pokemon?.map((alien) => {
