@@ -1,1 +1,77 @@
-/*Schrijf hier jouw eigen CSS!*/
+/*////////////////////////////////////////////////////////////////////////
+Table of Contents:
+    1. Global Styles
+    2. Typografie
+    3. Areas
+    4. Media Queries
+////////////////////////////////////////////////////////////////////////*/
+
+/*////////////////////////
+    1. Global Styles
+////////////////////////*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ol, ul {
+    list-style: none
+}
+/*////////////////////////
+    2. Typografie
+////////////////////////*/
+
+/*////////////////////////
+    3. Areas
+////////////////////////*/
+main {
+    /*border:2px solid red;*/
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    flex-basis: 100vw;
+}
+div{
+    /*border:2px solid magenta;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 12px;
+    width: 100%;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+button{
+    background-color: darkgrey;
+    margin:6px;
+    width:118px;
+}
+article {
+    background-color: white;
+    padding:9px 9px;
+    margin:4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex-basis: 180px;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+li {
+    background-color: darkgrey;
+    padding: 3px 32px;
+    border: 4px solid white;
+    width: 100%;
+}
+/*////////////////////////
+    4. Media Queries
+////////////////////////*/
